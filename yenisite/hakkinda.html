@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hakkında</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f4;
+         color: #333;
+      }
+      header {
+         background-color: #4CAF50;
+         color: #fff;
+         padding: 20px 0;
+         text-align: center;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+         margin: 0;
+         font-size: 2.5em;
+         transition: color 0.3s ease;
+      }
+      header h1:hover {
+         color: #e0e0e0;
+      }
+      nav {
+         background-color: #333;
+         padding: 10px;
+         text-align: center;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      nav a {
+         color: #fff;
+         margin: 0 15px;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.3s ease, transform 0.3s ease;
+      }
+      nav a:hover {
+         color: #4CAF50;
+         transform: scale(1.1);
+      }
+      .container {
+         max-width: 1200px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+      }
+      h2 {
+         border-bottom: 2px solid #4CAF50;
+         padding-bottom: 5px;
+         color: #4CAF50;
+      }
+      .team-member {
+         display: flex;
+         align-items: center;
+         margin: 20px 0;
+         background-color: #f9f9f9;
+         padding: 15px;
+         border-radius: 8px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .team-member img {
+         border-radius: 50%;
+         margin-right: 20px;
+         width: 100px;
+         height: 100px;
+         border: 3px solid #4CAF50;
+         transition: border-color 0.3s ease;
+      }
+      .team-member img:hover {
+         border-color: #45a049;
+      }
+      footer {
+         background-color: #333;
+         color: #fff;
+         text-align: center;
+         padding: 10px 0;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      }
+      footer p {
+         margin: 0;
+      }
+      /* Yükleme ekranı stili */
+      .loading {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(255, 255, 255, 0.8);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         z-index: 9999;
+         transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      .loading.hidden {
+         opacity: 0;
+         visibility: hidden;
+      }
+
+      .spinner {
+         border: 8px solid #f3f3f3; /* Light grey */
+         border-top: 8px solid #4CAF50; /* Green */
+         border-radius: 50%;
+         width: 60px;
+         height: 60px;
+         animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+      }
+
+      .loading-message {
+         position: absolute;
+         top: 70%;
+         text-align: center;
+         font-size: 1.2em;
+         color: #4CAF50;
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <div class="loading-message">Sabırlı Olun...</div>
+   </div>
+
+   <header>
+      <h1>Hakkımızda</h1>
+   </header>
+
+   <nav>
+      <a href="index.html">Anasayfa</a>
+      <a href="hakkinda.html">Hakkında</a>
+      <a href="servisler.html">Servisler</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="contact.html">İletişim</a>
+      <a href="feedback.html">Geri Bildirim</a>
+   </nav>
+
+   <div class="container">
+      <h2>Biz Kimiz?</h2>
+      <p>
+         YENİSİTEM, 2024 yılında kurulmuş olan, müşterilerine yüksek kalitede hizmet sunmayı amaçlayan bir dijital platformdur. Web sitemiz aracılığıyla çeşitli hizmetler sunuyoruz ve kullanıcılarımızın ihtiyaçlarını en iyi şekilde karşılamayı hedefliyoruz.
+      </p>
+
+      <h2>Misyonumuz</h2>
+      <p>
+         Misyonumuz, kullanıcılarımıza yenilikçi ve etkili dijital çözümler sunarak onların hayatlarını kolaylaştırmaktır. Her zaman müşteri memnuniyetini ön planda tutarak çalışıyoruz.
+      </p>
+
+      <h2>Vizyonumuz</h2>
+      <p>
+         Vizyonumuz, dijital dünyada lider bir platform haline gelmek ve kullanıcılarımızın güvenilir bilgi ve hizmet kaynağı olmaktır.
+      </p>
+
+      <h2>Ekibimiz</h2>
+      <div class="team-member">
+         <img src="resimler/profilresmi.png" alt="Takım Üyesi 1">
+         <div>
+            <h3>İbrahim İlhan Korkmaz</h3>
+            <p>Kurucu ve CEO</p>
+         </div>
+      </div>
+
+      <div class="team-member">
+         <img src="resimler/profilresmi.png" alt="Takım Üyesi 2">
+         <div>
+            <h3>İbrahim İlhan Korkmaz</h3>
+            <p>Baş Geliştirici</p>
+         </div>
+      </div>
+
+      <div class="team-member">
+         <img src="resimler/profilresmi.png" alt="Takım Üyesi 3">
+         <div>
+            <h3>İbrahim İlhan Korkmaz</h3>
+            <p>Proje Yöneticisi</p>
+         </div>
+      </div>
+   </div>
+
+   <footer>
+      <p>&copy; 2024 İbrahim İlhan Korkmaz.Tüm hakları saklıdır.</p>
+   </footer>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const loading = document.getElementById('loading');
+
+         // Sayfa yüklenirken yükleme ekranını gizle
+         window.addEventListener('load', function () {
+            loading.classList.add('hidden');
+         });
+
+         // Link tıklama olayını yakala
+         document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (event) {
+               event.preventDefault(); // Varsayılan davranışı durdur
+               loading.classList.remove('hidden');
+               
+               // 1 saniye bekle ve ardından yönlendirme yap
+               setTimeout(() => {
+                  window.location.href = this.href;
+               }, 1000);
+            });
+         });
+      });
+   </script>
+
+</body>
+
+</html>

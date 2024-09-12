@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            transition: color 0.3s ease;
+        }
+
+        header h1:hover {
+            color: #e0e0e0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h2 {
+            color: #4CAF50;
+        }
+
+        .featured-content,
+        .about-us,
+        .services,
+        .testimonials,
+        .blog-posts,
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .featured-content h2,
+        .about-us h2,
+        .services h2,
+        .testimonials h2,
+        .blog-posts h2,
+        .contact-info h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            color: #4CAF50;
+        }
+
+        .featured-content ul,
+        .services ul,
+        .blog-posts ul,
+        .about-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .featured-content ul li,
+        .services ul li,
+        .blog-posts ul li,
+        .about-us ul li {
+            margin: 10px 0;
+        }
+
+        .featured-content ul li a,
+        .services ul li a,
+        .blog-posts ul li a,
+        .about-us ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .featured-content ul li a:hover,
+        .services ul li a:hover,
+        .blog-posts ul li a:hover,
+        .about-us ul li a:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .about-us p {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        blockquote {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Slider veya Carousel */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.5s ease-in-out;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Yükleme ekranı stili */
+        .loading {
+            display: none;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .star {
+            font-size: 20px;
+            color: #ccc;
+            margin: 0 2px;
+        }
+
+        .star.filled {
+            color: #f5c518;
+        }
+
+
+        /*--------------------------*/
+
+
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bülten</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Anasayfa</a>
+        <a href="hakkinda.html">Hakkında</a>
+        <a href="servisler.html">Servisler</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="contact.html">İletişim</a>
+        <a href="feedback.html">Geri Bildirim</a>
+        <a href="resimler.html">Resimler</a>
+    </nav>
+
+    <div class="container">
+        <article class="news-article">
+            <h2>Büyük Yenilikler: Şirketimizdeki Son Gelişmeler</h2>
+            <p>Son birkaç aydır, şirketimizde büyük bir dönüşüm süreci yaşanıyor. Bu süreç, hem iç yapımızda hem de dışarıya sunduğumuz hizmetlerde köklü değişiklikleri içeriyor. Müşterilerimize ve çalışanlarımıza daha iyi hizmet verebilmek adına gerçekleştirdiğimiz bu değişikliklerin detaylarını sizlerle paylaşmak istiyoruz.</p>
+
+            <h2>Yeni Ürün Serisi ve İnovasyon</h2>
+            <p>Ürün geliştirme departmanımız, son derece yoğun ve titiz bir çalışma sürecinin ardından, tamamen yenilenen bir ürün serisiyle karşınıza çıkıyor. Yeni ürünlerimiz, en son teknolojiye sahip bileşenlerle donatıldı ve kullanıcı deneyimini en üst düzeye çıkarmak için tasarlandı. Geliştirdiğimiz bu ürünler, sadece teknik açıdan değil, estetik ve ergonomik açıdan da mükemmelliği hedefliyor. Özellikle, enerji verimliliği ve çevre dostu tasarım anlayışımızla dikkat çekiyoruz. Ar-Ge ekibimiz, bu süreçte birçok yenilikçi fikir üzerinde çalıştı ve müşteri geri bildirimlerini dikkate alarak ürünleri nihai hale getirdi.</p>
+
+            <h2>Sürdürülebilirlik ve Çevre Dostu Yaklaşımlar</h2>
+            <p>Şirket olarak, çevresel sürdürülebilirliği iş modelimizin merkezine koyduk. Bu doğrultuda, üretim süreçlerimizi daha ekolojik hale getirmek için önemli adımlar attık. Yenilenebilir enerji kaynaklarına geçiş yaparak, enerji tüketimimizi minimize ettik. Ayrıca, atıklarımızı azaltmak ve geri dönüşüm oranlarını artırmak amacıyla üretim süreçlerimizde büyük değişiklikler gerçekleştirdik. Çevre dostu malzemeler kullanarak, doğanın korunmasına katkıda bulunmayı ve gelecek nesillere daha temiz bir çevre bırakmayı amaçlıyoruz.</p>
+
+            <h2>Yeni Ofis ve Çalışma Koşulları</h2>
+            <p>Çalışanlarımızın verimliliğini artırmak ve iş ortamını daha konforlu hale getirmek amacıyla, yepyeni bir ofis binası inşa ettik. Bu yeni ofis, modern tasarımı, açık çalışma alanları ve rahat dinlenme köşeleriyle çalışanlarımızın motivasyonunu ve iş tatminini artıracak şekilde tasarlandı. Ayrıca, ofisimizde teknolojik yenilikler de mevcut; akıllı toplantı odaları, yüksek hızlı internet bağlantıları ve ergonomik çalışma alanları gibi özellikler sunuyoruz. Çalışan memnuniyetini ön planda tutarak, esnek çalışma saatleri ve uzaktan çalışma opsiyonları gibi modern çalışma koşullarını da uygulamaya koyduk.</p>
+
+            <h2>Toplum ve Sosyal Sorumluluk Projeleri</h2>
+            <p>Şirketimiz, sosyal sorumluluk projelerine olan bağlılığını her geçen gün artırıyor. Toplumumuza olan katkılarımızı çeşitli alanlarda sürdürmekte kararlıyız. Eğitim alanında, dezavantajlı bölgelerdeki öğrencilere burslar ve eğitim materyalleri sağlıyoruz. Ayrıca, sağlık alanında gerçekleştirdiğimiz projelerle, sağlık hizmetlerine erişimi olmayan bireylere destek olmayı hedefliyoruz. Çevre koruma projelerinde ise, ağaç dikme etkinlikleri ve çevre temizliği gibi faaliyetlerde bulunarak, doğayı koruma bilincini artırıyoruz. Bu projeler, topluma olan sorumluluğumuzu yerine getirmek ve daha yaşanabilir bir dünya oluşturmak için atılmış önemli adımlardır.</p>
+
+            <h2>Gelecek Planları ve Hedefler</h2>
+            <p>2024 yılı için belirlediğimiz hedefler doğrultusunda, şirketimizi daha da ileriye taşımak için çeşitli stratejiler geliştirdik. Uluslararası pazarda daha güçlü bir varlık göstermeyi planlıyoruz. Bu kapsamda, global işbirlikleri ve stratejik ortaklıklar kurarak, küresel ölçekte etkimizi artıracağız. Ayrıca, müşteri deneyimini ve memnuniyetini sürekli olarak iyileştirmek için yeni hizmet stratejileri geliştireceğiz. İnovasyon ve müşteri odaklılık prensiplerimiz doğrultusunda, sektördeki liderliğimizi sürdürmek ve daha geniş bir kitleye ulaşmak için çalışmalarımıza devam edeceğiz.</p>
+
+            <h2>Sonuç</h2>
+            <p>Yukarıda özetlediğimiz gelişmeler, şirketimizin dinamik bir şekilde ilerlediğini ve değişimlere uyum sağladığını göstermektedir. Bu yenilikler, hem müşterilerimize hem de çalışanlarımıza daha iyi hizmet sunma hedefimize ulaşmamızda önemli rol oynayacak. Şirketimizin bu heyecan verici dönüm noktalarını sizlerle paylaşmak ve gelişmelerimizi aktarmak bizim için büyük bir mutluluk. Web sitemizi düzenli olarak ziyaret ederek, en güncel haberleri ve gelişmeleri takip edebilirsiniz. Gelecekteki adımlarımızı ve projelerimizi sizlerle paylaşmaya devam edeceğiz. Bizimle kalın ve bu yolculuğun bir parçası olun!</p>
+        </article>
+    </div>
+
+</body>
+
+</html>

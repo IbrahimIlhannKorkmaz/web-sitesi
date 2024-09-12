@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            transition: color 0.3s ease;
+        }
+
+        header h1:hover {
+            color: #e0e0e0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h2 {
+            color: #4CAF50;
+        }
+
+        .featured-content,
+        .about-us,
+        .services,
+        .testimonials,
+        .blog-posts,
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .featured-content h2,
+        .about-us h2,
+        .services h2,
+        .testimonials h2,
+        .blog-posts h2,
+        .contact-info h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            color: #4CAF50;
+        }
+
+        .featured-content ul,
+        .services ul,
+        .blog-posts ul,
+        .about-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .featured-content ul li,
+        .services ul li,
+        .blog-posts ul li,
+        .about-us ul li {
+            margin: 10px 0;
+        }
+
+        .featured-content ul li a,
+        .services ul li a,
+        .blog-posts ul li a,
+        .about-us ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .featured-content ul li a:hover,
+        .services ul li a:hover,
+        .blog-posts ul li a:hover,
+        .about-us ul li a:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .about-us p {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        blockquote {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Slider veya Carousel */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.5s ease-in-out;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Yükleme ekranı stili */
+        .loading {
+            display: none;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .star {
+            font-size: 20px;
+            color: #ccc;
+            margin: 0 2px;
+        }
+
+        .star.filled {
+            color: #f5c518;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bülten</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Anasayfa</a>
+        <a href="hakkinda.html">Hakkında</a>
+        <a href="servisler.html">Servisler</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="contact.html">İletişim</a>
+        <a href="feedback.html">Geri Bildirim</a>
+        <a href="resimler.html">Resimler</a>
+    </nav>
+
+    <div class="container">
+        <article>
+            <h2>Apple, iPhone 15 Serisini Tanıttı: Yeni Özellikler ve Yenilikler</h2>
+            <p>Apple, iPhone 15 Serisini Tanıttı: Yeni Özellikler ve Yenilikler
+                Apple, bugün düzenlediği büyük basın toplantısında merakla beklenen iPhone 15 serisini tanıttı. Yeni iPhone 15, teknoloji meraklılarını heyecanlandıracak birçok yenilik ve geliştirmeyle geliyor. Apple’ın CEO’su Tim Cook’un ev sahipliğinde gerçekleşen etkinlikte, iPhone 15'in tüm detayları açıklandı.
+                Performans ve Tasarımda Yenilikler
+                iPhone 15, Apple’ın yeni A17 Bionic çipseti ile güçlendirildi. Bu yeni çipset, %20 daha yüksek işlemci performansı ve %30 daha iyi grafik işleme kapasitesi sunarak, daha hızlı ve akıcı bir kullanıcı deneyimi vaat ediyor. Ayrıca, iPhone 15'in tasarımında da önemli değişiklikler var. Cihaz, daha ince çerçeveleri ve hafif, dayanıklı titanyum çerçevesi ile dikkat çekiyor. Yüksek kaliteli cam kaplaması ve yeni renk seçenekleri de kullanıcıların beğenisine sunuluyor.
+                Kamera Sistemi ve Ekran
+                Yeni iPhone 15, geliştirilmiş bir kamera sistemi ile geliyor. 48 megapiksel ana kameranın yanı sıra, daha iyi gece çekimleri ve artırılmış optik yakınlaştırma özellikleri sunan ikinci bir lens eklendi. Apple, ayrıca gelişmiş yapay zeka algoritmalarıyla desteklenen yeni bir görüntü işleme teknolojisi tanıttı. Bu teknoloji, daha canlı ve gerçekçi renkler, daha net detaylar ve düşük ışık koşullarında daha iyi performans sağlıyor.
+                6.1 inçlik Super Retina XDR ekran, HDR10 desteği ve 2000 nit'e kadar çıkan maksimum parlaklık kapasitesi ile kullanıcıların daha parlak ve canlı görüntüler elde etmesini sağlıyor. Apple, ekranın dayanıklılığını artırmak için yeni bir cam teknolojisi kullanıyor.
+                USB-C Bağlantı Noktası ve Pil Ömrü
+                Bir diğer büyük değişiklik ise, iPhone 15’in USB-C bağlantı noktasına sahip olması. Bu değişiklik, kullanıcıların daha hızlı veri transferi ve şarj işlemleri yapabilmesini sağlıyor. Ayrıca, cihazın pil ömrü de önemli ölçüde artırıldı. Apple, iPhone 15’in önceki modellerden %20 daha uzun pil ömrü sunduğunu belirtiyor.
+                Çevre Dostu Malzemeler ve Fiyat
+                Apple, çevre dostu üretim hedeflerine uygun olarak iPhone 15'in tamamen geri dönüştürülmüş alüminyumdan yapıldığını ve daha az çevresel etki yaratan malzemeler kullanıldığını açıkladı. Yeni model, 22 Eylül’de piyasaya sürülecek ve ön siparişler 15 Eylül’de başlayacak. iPhone 15’in fiyatı ise 999 dolardan başlayacak.
+                Apple, iPhone 15 ile teknoloji dünyasında önemli bir adım attığını ve kullanıcı deneyimini daha da geliştirmeyi hedeflediğini belirtiyor. Teknoloji meraklıları ve iPhone kullanıcıları, bu yenilikleri dört gözle bekliyor.
+                </p>
+        </article>
+    </div>
+
+</body>
+
+</html>

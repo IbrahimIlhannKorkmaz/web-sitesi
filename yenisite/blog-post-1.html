@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <!---buraya kod yazdım-->
+    <!---<link rel="stylesheet" href="style.css">-->
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            transition: color 0.3s ease;
+        }
+
+        header h1:hover {
+            color: #e0e0e0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px; /* Menü yüksekliğini ayarladık */
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative; /* Menü konumunu belirlenecek */
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h2 {
+            color: #4CAF50;
+        }
+
+        .featured-content,
+        .about-us,
+        .services,
+        .testimonials,
+        .blog-posts,
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .featured-content h2,
+        .about-us h2,
+        .services h2,
+        .testimonials h2,
+        .blog-posts h2,
+        .contact-info h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            color: #4CAF50;
+        }
+
+        .featured-content ul,
+        .services ul,
+        .blog-posts ul,
+        .about-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .featured-content ul li,
+        .services ul li,
+        .blog-posts ul li,
+        .about-us ul li {
+            margin: 10px 0;
+        }
+
+        .featured-content ul li a,
+        .services ul li a,
+        .blog-posts ul li a,
+        .about-us ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .featured-content ul li a:hover,
+        .services ul li a:hover,
+        .blog-posts ul li a:hover,
+        .about-us ul li a:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .about-us p {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        blockquote {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bülten</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Anasayfa</a>
+        <a href="hakkinda.html">Hakkında</a>
+        <a href="servisler.html">Servisler</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="contact.html">İletişim</a>
+        <a href="feedback.html">Geri Bildirim</a>
+        <a href="resimler.html">Resimler</a>
+    </nav>
+
+    <div class="container">
+        <article>
+            <h2>Yerel Spor Kulübü Şampiyon Oldu</h2>
+            <p>Bugün, şehirde düzenlenen yerel futbol turnuvasında <strong>Kulüp Adı</strong> büyük bir başarıya imza atarak şampiyon oldu. Final maçında <strong>Rakip Takım Adı</strong> karşısında 2-1 galip gelen <strong>Kulüp Adı</strong>, bu zaferle birlikte 5 yıllık bir aradan sonra ilk kez turnuvanın şampiyonu oldu. Maç sonrası yapılan törende, oyuncular ve teknik ekip büyük bir coşku ile ödüllerini aldı. Taraftarlar ise bu büyük başarının keyfini doyasıya çıkardı.</p>
+        </article>
+    </div>
+</body>
+</html>
