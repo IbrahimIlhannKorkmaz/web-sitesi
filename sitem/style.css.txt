@@ -1,0 +1,274 @@
+/* Genel Ayarlar */
+body {
+   font-family: 'Roboto', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+   color: #333;
+}
+
+/* Header */
+header {
+   background-color: #333;
+   color: #fff;
+   padding: 20px 0;
+   text-align: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigasyon */
+nav {
+   background-color: #444;
+   padding: 10px;
+   text-align: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+   color: #fff;
+   margin: 0 15px;
+   text-decoration: none;
+   transition: color 0.3s;
+}
+
+nav a:hover {
+   color: #4CAF50;
+}
+
+/* İçerik Konteyneri */
+.container {
+   max-width: 1200px;
+   margin: 20px auto;
+   padding: 0 20px;
+}
+
+/* Başlıklar */
+h2 {
+   border-bottom: 2px solid #333;
+   padding-bottom: 5px;
+}
+
+/* Buton */
+button {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 12px 24px; /* Buton içi boşluk */
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 10px;
+   cursor: pointer;
+   border-radius: 8px; /* Yuvarlatılmış köşeler */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Buton gölgesi */
+   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+   background-color: #45a049;
+   transform: scale(1.05); /* Hover efektinde büyüme */
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover efektinde gölge artışı */
+}
+
+button:active {
+   background-color: #388e3c; /* Tıklama rengi */
+   transform: scale(1); /* Tıklama efektinde geri dönüş */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tıklama efektinde gölge küçülmesi */
+}
+
+/* Linkler */
+a {
+   color: #4CAF50; /* Link rengi */
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s, text-decoration 0.3s;
+}
+
+a:hover {
+   color: #388e3c; /* Hover rengi */
+   text-decoration: underline; /* Hover efektinde alt çizgi */
+}
+
+/* Görseller */
+img {
+   width: 100%;
+   height: auto;
+   transition: transform 0.3s, opacity 0.3s;
+}
+
+img:hover {
+   transform: scale(1.1);
+   opacity: 0.8;
+}
+
+/* Parallax Kaydırma */
+.parallax-container {
+   position: relative;
+   height: 400px;
+   overflow: hidden;
+}
+
+.parallax-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('path/to/your/image.jpg'); /* Arka plan resmi yolu */
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center;
+   transform: translateZ(0) scale(1.5);
+}
+
+.content {
+   position: relative;
+   padding: 20px;
+   color: #fff;
+   text-align: center;
+   z-index: 1;
+}
+
+/* Footer */
+footer {
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 10px 0;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+}
+
+/* Yükleme ekranı stili */
+.loading {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.8);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 9999;
+   transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+   opacity: 0;
+   visibility: hidden;
+}
+
+.spinner {
+   border: 8px solid #f3f3f3; /* Light grey */
+   border-top: 8px solid #3498db; /* Blue */
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+}
+
+/* Carousel */
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.blog-posts {
+   margin: 20px 0;
+}
+
+.blog-posts h2 {
+   border-bottom: 2px solid #4CAF50;
+   padding-bottom: 5px;
+   color: #4CAF50;
+}
+
+.blog-post {
+   margin-bottom: 20px;
+}
+
+.blog-post h3 {
+   margin: 0 0 10px 0;
+   font-size: 1.5em;
+}
+
+.blog-post h3 a {
+   color: #4CAF50;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.blog-post h3 a:hover {
+   color: #45a049;
+}
+
+.blog-post p {
+   margin: 0;
+   line-height: 1.6;
+}
+
+.blog-post p a {
+   color: #4CAF50;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.blog-post p a:hover {
+   color: #45a049;
+}
+/*üst menü sabit*/
+nav {
+   position: -webkit-sticky; /* Safari */
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+}
+
+.fa {
+   padding: 15px;
+   font-size: 15px;
+   width: 15px;
+   text-align: center;
+   text-decoration: none;
+ }
+ 
+ /* Add a hover effect if you want */
+ .fa:hover {
+   opacity: 0.7;
+ }
+ 
+ /* Set a specific color for each brand */
+ 
+ /* Facebook */
+ .fa-facebook {
+   background: #3B5998;
+   color: white;
+ }
+ /* İnstagram */
+ .fa-instagram {
+   background: #125688;
+   color: white;
+ }
+ #new-box {
+   border: 2px solid #4CAF50;
+   padding: 40px;
+   border-radius: 40px;
+   background-color: #e7f3e7;
+   width: 400px;
+   position: absolute;
+   top: 125px; /* Sayfanın üstünden 50px aşağıda */
+   left: 50px; /* Sayfanın solundan 50px içeride */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
