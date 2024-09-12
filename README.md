@@ -9,4 +9,14 @@ Bu proje, haber paylaşımları ve ders notlarının düzenli olarak yayınlanab
 1. Bu depoyu klonlayın:
    ```bash
    git clone https://github.com/IbrahimIlhannKorkmaz/web-sitesi.git
+## Kullanım
+- Siteyi açın ve haberleri görüntüleyin.
+- Ders notları sekmesinden istediğiniz konudaki notlara ulaşın.
+## Katkıda Bulunma
+Katkıda bulunmak için lütfen [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını inceleyin.
+## Lisans
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+## İletişim
+- Geliştirici: İbrahim İlhan Korkmaz
+- E-posta: ilhankorkmaz666@gmail.com
 
